@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style_1.css">
+    <title>Pembayaran - TOSERBA ONLINE</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index_home.html">TOSERBA ONLINE</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index_home.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index_pembayaran.html">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index_about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index_contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index_login.html">Log Out</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" id="search-input" placeholder="cari..." aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cari</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="product-section">
+            <h2>Daftar Produk</h2>
+            <table class="table table-striped" id="product-table">
+                <thead>
+                    <tr>
+                        <th>Gambar</th>
+                        <th>Nama Barang</th>
+                        <th>Harga</th>
+                        <th>Jumlah</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody id="product-list">
+                    <!-- Produk 1 -->
+                    <tr class="product-item">
+                        <td><img class="product-image" src="image/beras rojolele 25 kg.jpg" alt="Product 1"></td>
+                        <td class="product-name">Beras Rojolele 25 Kg</td>
+                        <td class="price">550000</td>
+                        <td>
+                            <select class="quantity form-control" onchange="updateTotal()">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </td>
+                        <td>
+                            <span class="rating" id="rating-1">4.5/5</span>
+                            <button class="btn btn-primary" onclick="rateProduct(1)">Rate</button>
+                        </td>
+                    </tr>
+                    <!-- Produk 2 -->
+                    <tr class="product-item">
+                        <td><img class="product-image" src="image/gulaku.jpg" alt="Product 2"></td>
+                        <td class="product-name">Gulaku</td>
+                        <td class="price">15000</td>
+                        <td>
+                            <select class="quantity form-control" onchange="updateTotal()">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </td>
+                        <td>
+                            <span class="rating" id="rating-2">4.5/5</span>
+                            <button class="btn btn-primary" onclick="rateProduct(2)">Rate</button>
+                        </td>
+                    </tr>
+                    <!-- Produk 3 -->
+                    <tr class="product-item">
+                        <td><img class="product-image" src="image/garam refina.jpg" alt="Product 3"></td>
+                        <td class="product-name">Garam Refina</td>
+                        <td class="price">10000</td>
+                        <td>
+                            <select class="quantity form-control" onchange="updateTotal()">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </td>
+                        <td>
+                            <span class="rating" id="rating-3">4.5/5</span>
+                            <button class="btn btn-primary" onclick="rateProduct(3)">Rate</button>
+                        </td>
+                    </tr>
+                    <!-- Produk 4 -->
+                    <tr class="product-item">
+                        <td><img class="product-image" src="image/lifeboy.jpg" alt="Product 4"></td>
+                        <td class="product-name">Sabun Lifeboy</td>
+                        <td class="price">3000</td>
+                        <td>
+                            <select class="quantity form-control" onchange="updateTotal()">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </td>
+                        <td>
+                            <span class="rating" id="rating-4">4.5/5</span>
+                            <button class="btn btn-primary" onclick="rateProduct(4)">Rate</button>
+                        </td>
+                    </tr>
+                    <!-- Produk 5 -->
+                    <tr class="product-item">
+                        <td><img class="product-image" src="image/beras ramos 5KG.jpg" alt="Product 5"></td>
+                        <td class="product-name">Beras Ramos 5 Kg</td>
+                        <td class="price">74500</td>
+                        <td>
+                            <select class="quantity form-control" onchange="updateTotal()">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </td>
+                        <td>
+                            <span class="rating" id="rating-5">4.5/5</span>
+                            <button class="btn btn-primary" onclick="rateProduct(5)">Rate</button>
+                        </td>
+                    </tr>
+                    <!-- Produk 6 -->
+                    <tr class="product-item">
+                        <td><img class="product-image" src="image/Daia deterjen bubuk.jpg" alt="Product 6"></td>
+                        <td class="product-name">Daia Deterjen Bubuk 800g</td>
+                        <td class="price">17900</td>
+                        <td>
+                            <select class="quantity form-control" onchange="updateTotal()">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </td>
+                        <td>
+                            <span class="rating" id="rating-6">4.5/5</span>
+                            <button class="btn btn-primary" onclick="rateProduct(6)">Rate</button>
+                        </td>
+                    </tr>
+                     <!-- Produk 7 -->
+                    <tr class="product-item">
+                        <td><img class="product-image" src="image/shinzui body cleanser.jpg" alt="Product 7"></td>
+                        <td class="product-name">Shinzui Body cleanser</td>
+                        <td class="price">20900</td>
+                        <td>
+                            <select class="quantity form-control" onchange="updateTotal()">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </td>
+                        <td>
+                            <span class="rating" id="rating-7">4.5/5</span>
+                            <button class="btn btn-primary" onclick="rateProduct(7)">Rate</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="discount-section">
+                <label for="discount-code">Kode Diskon:</label>
+                <input type="text" id="discount-code" class="form-control">
+                <button class="btn btn-primary mt-2" onclick="applyDiscount()">CEK PROMO DISKON</button>
+            </div>
+            <div class="total-section">
+                <h2>Rincian Pembelian</h2>
+                <p>Subtotal: Rp <span id="subtotal-price">0</span></p>
+                <p>Pajak (10%): Rp <span id="tax-amount">0</span></p>
+                <p>Diskon: Rp <span id="discount-amount">0</span></p>
+                <hr>
+                <p>Total Harga: Rp <span id="total-price">0</span></p>
+                <p>Biaya Pengiriman: Rp <span id="shipping-cost">10000</span></p>
+                <hr>
+                <h3>Total Setelah Diskon dan Pajak: Rp <span id="final-total">0</span></h3>
+                <p>"Terima Kasih Telah Berbelanja di Toko Kami"</p>
+                <button class="btn btn-primary" id="pay-now-btn">Pembayaran</button>
+            </div>
+        </section>
+        <section class="payment-method-section d-none">
+            <h2>Pilih Metode Pembayaran</h2>
+            <div class="form-group">
+                <label for="payment-method">Metode Pembayaran:</label>
+                <select class="form-control" id="payment-method" onchange="showPaymentInstructions(this.value)">
+                    <option value="">Pilih Metode Pembayaran</option>
+                    <option value="ATM BCA">ATM BCA</option>
+                    <option value="DANA">DANA</option>
+                    <option value="GoPay">GoPay</option>
+                    <option value="OVO">OVO</option>
+                </select>
+            </div>
+            <div id="payment-instructions"></div>
+            <button class="btn btn-success" id="confirm-payment-btn">Konfirmasi Pembayaran</button>
+        </section>
+    </main>
+    <footer class="text-center py-4 dark:bg-zinc-800">
+        <p>&copy; 2024 Toserba Online. All rights reserved.</p>
+        <a href="privacy.html" class="text-blue-500 dark:text-blue-300">Privacy Policy</a> |
+        <a href="terms.html" class="text-blue-500 dark:text-blue-300">Terms of Service</a> |
+        <a href="contact.html" class="text-blue-500 dark:text-blue-300">Contact Us</a>
+    </footer>
+
+    <!-- Invoice Modal -->
+    <div class="modal fade" id="invoiceModal" tabindex="-1" role="dialog" aria-labelledby="invoiceModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="invoiceModalLabel">Invoice</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Terima Kasih Telah Berbelanja!</h5>
+                    <div id="invoice-details"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script_pembayaran.js"></script>
+</body>
+</html>
